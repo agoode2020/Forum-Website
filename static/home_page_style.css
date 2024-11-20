@@ -1,0 +1,376 @@
+/*global*/
+
+*{
+    box-sizing: border-box; 
+ }
+ 
+html{
+    font-size: 14px;
+    font-family: 'Titillium Web', sans-serif;
+    background-color:beige;
+    color:black
+}
+
+a{
+    color:blue;
+    font-weight: bolder;
+    text-decoration: none;  
+}
+
+h1{
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+/*home.html*/
+
+.container{
+    margin: 20px;
+    padding: 20px;
+}
+
+.subforum{
+    margin-top: 20px;
+}
+
+.subforum-title{
+    background-color: darkgray;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 4px;
+}
+
+.subforum-row{
+    display: grid;
+    grid-template-columns: 67% 13% 20%;
+}
+
+.subforum-column{
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+    background-color: darkgray;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* for the smartphones*/
+@media screen and (max-width: 460px){
+    .container{
+        margin: 10px;
+    }
+
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 75%;
+        grid-template-rows: 65% 35%;
+    }
+
+}
+
+/*for the tablets*/
+/*@media screen and (min-width: 460px) and (max-width: 1024px){
+    .container{
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .subforum-row{
+        display: grid;
+        grid-template-columns: 60% 10% 20%;
+    }
+
+    html{
+        font-size: 16px;
+    }
+
+    h1{
+        font-size: 18px;
+    }
+}*/
+
+/*nav bar*/
+header{
+    margin-inline: 10px;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+}
+
+.navigation{
+    background-color: gainsboro;
+    padding: 10px;
+    width: 65%;
+    display: inline-block;
+    border-radius: 5px;
+    max-height: 80px;
+    margin-right: 10px;
+}
+
+.nav-list{
+    list-style-type: none;
+    overflow: none;
+}
+
+.nav-item a{
+    float: right;
+    display: block;
+    text-align: center;
+    margin-inline: 20px;
+    font-size: 20px;
+    padding: 10px;
+    color:brown;
+}
+
+.nav-item a:hover{
+    background-color: aliceblue;
+}
+
+.close-icon i{
+    font-size: 40px;
+    float: left;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+
+.bar-icon{
+    font-size: 60px;
+    display: inline-block;
+    margin-right: 10px;
+    color:black;
+    cursor: pointer;
+}
+
+.brand{
+    font-size: 50px;
+    display: inline-block;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+/*search box*/
+
+.search-box{
+    border: solid 1px;
+    margin-top: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 1px 2px 3px;
+}
+
+.search-box select{
+    padding: 10px;
+}
+
+.search-box input{
+    padding: 10px
+}
+
+.search-box button{
+    padding: 8px;
+}
+
+.search-box button:hover{
+    background-color: aquamarine;
+
+}
+
+/*Forum info*/
+.forum-info{
+    padding: 20px;
+    background-color:darkgray;
+}
+
+.chart{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer{
+    margin-top: 20px;
+    padding: 20px;
+    background-color: darkgray;
+    display: block;
+    text-align: center;
+}
+
+/*############################*/
+/* My_Forum.html */
+
+.table-head{
+    display: flex;
+}
+
+.table-head div{
+    padding: 5px; 
+    margin: 2px;
+    background-color:black;
+    color:white;
+    font-weight: bold;
+}
+
+.table-head .status{
+    flex: 5%;
+}
+
+.table-head .subjects{
+    flex: 70%;
+}
+
+.table-head .replies{
+    flex: 10%;
+}
+
+.table-head .last-reply{
+    flex: 15%;
+}
+
+/* table body */
+
+.table-row{
+    display: flex;
+}
+
+.table-row .status, .table-row .subjects, .table-row .replies, .table-row .last-reply{
+    padding: 5px;
+    margin: 2px;;
+    background-color: darkgray;
+}
+
+.table-row .status{
+    flex: 5%;
+    font-size: 30px;
+    text-align: center;
+}
+
+.table-row .subjects{
+    flex: 70%;
+}
+
+.table-row .replies{
+    flex: 10%;
+}
+
+.table-row .last-reply{
+    flex: 15%;
+}
+
+/*Pagination*/
+
+.pagination{
+    padding: 20px;
+    font-size: 15px;
+}
+
+.pagination a{
+    color:blue;
+    margin-inline: 5px;
+    padding: 5px 10px;
+    border: solid 0.5px 
+}
+
+.pagination a:hover{
+    opacity: 0.5;
+
+}
+
+/*Navigation*/
+
+.navigate{
+    margin: 20px;
+    font-weight: lighter;
+    font-size: 24px;
+}
+
+.navigate a{
+    color:black;
+}
+
+.navigate a:hover{
+    color:blue;
+    font-weight: bolder;
+}
+
+/*############################*/
+/* detail.html */
+
+.head{
+    display: flex;
+    background-color: darkgrey;
+    padding: 5px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.authors{
+    flex: 20%;
+}
+
+.content{
+    flex: 80%;
+}
+
+.body{
+    display: flex;
+    background-color:darkgray;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.body .authors .username{
+    font-size: 20px;
+}
+
+.body .authors img{
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.body .content .comment button{
+    border: none;
+    padding: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+    float: right;
+}
+
+.body .content .comment button:hover{
+    box-shadow: 4px 6px #fff;
+}
+
+/*comment*/
+
+.comment-area{
+    margin-top: 50px;
+}
+
+.comment-area textarea{
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+}
+
+.comment-area input{
+    float: right;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.comment-area input:hover{
+    border: solid 1px #000000; 
+}
+
+.comments-container{
+    margin-top: 50px;
+}

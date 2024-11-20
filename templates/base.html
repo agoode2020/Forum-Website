@@ -1,0 +1,72 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="{% static 'home_page_style.css' %}">
+        <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!--nav bar and heading-->
+        <header>
+            <div class="navbar"> <!--div is just a simple container that holds everything-->        
+                <nav class="navigation hide" id="navigation">
+                    <ul class="nav-list">
+                        <span class="close-icon"  onclick="showIconBar()""><i>&#9746</i></span>
+                        <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item"><a href="{% url 'logout' %}">Logout</a></li>
+                        {% else %}
+                        <li class="nav-item"><a href="{% url 'signup' %}">Signup</a></li>
+                        <li class="nav-item"><a href="{% url 'signin' %}">Signin</a></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                <a href="#" class="bar-icon" id="iconBar" onclick="hideIconBar()"><i>&#9776</i></a>
+                <div class="brand"> AcidRefluxTest.com </div>
+                {% if user.is_authenticated %}
+                <div style="font-size:50px;font-weight:300px; margin-left:100px;"><a href="{% url 'create_post' %}">+</a></div>
+                {% endif %}
+            </div>
+
+            <!--test link-->
+            <div class="test-info">
+                <a href="ar_test.html">
+                    <button type="button">Click Here to Take Test</button>
+                </a>
+                <p id="demo"></p>
+            </div>
+
+            <!--search box-->
+            <form action="{% url 'search_result' %}" role="form" method="GET">
+            <div class="search-box">
+                <div>
+                    <select name="" id="">
+                        <option value="everything">Everything</option>
+                        <option value="titles">Titles</option>
+                        <option value="descriptions">Descriptions</option>
+                    </select>
+                    <input type="text" name="q" id="" placeholder="search..."></input>
+                    <button type="submit" name="search">&#9906</button>
+                </div>
+            </div>
+            </form>
+
+        </header>
+        {% block content %}
+        {% endblock content %}
+
+        <footer>
+            <span>&copy; &nbsp;Scrib Goode | All right Reserved.</span>
+        </footer>
+
+        <script src= "{% static 'home.js' %}"></script>
+    </body>
+
+</html>

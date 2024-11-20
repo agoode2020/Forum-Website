@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+        <!--actual forum-->
+        <div class="container">
+            <div class="subforum">
+                <div class="subforum-title">
+                    <h1>Forum</h1>
+                </div>
+
+                {% for forum in forums %}
+
+                <div class="subforum-row">
+                    <div class="subforum-description subforum-column">
+                        <h1><a href="{{forum.get_url}}">{{forum.title}}:</a></h1>
+                        <p>Description: {{forum.description}} </p>
+                    </div>
+                    <div class="subforum-stats subforum-column center">
+                        <span>{{forum.num_posts}} Posts</span>
+                    </div>
+                    <div class="subforum-info subforum-column">
+                        <b><a href="{{forum.last_post.get_url}}">Last Post</a></b> by <a href="">{{forum.last_post.user.fullname|title}}</a>
+                        <br>
+                        on <small>{{forum.last_post.date|date}}</small>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+
+        <!--forum info-->
+        <div class="forum-info">
+            <div class="chart">
+                My Forum - Stats &nbsp;<i>&#128202</i>
+            </div>
+            <span><u>{{num_posts}}</u> Posts in <u>{{num_categories}}</u> Categories by <u>{{num_users}}</u> Users</span><br>
+            <span>Latest Post: <b><a href="{{last_post.get_url}}">{{last_post.title}}</a></b> on {{last_post.date|date}} by <a href="">{{last_post.user.fullname|title}}</a></span><br>
+            <span>Check out the<a href="{% url 'latest_posts' %}"> latest posts</a> .</span>
+        
+        </div>
+
+{% endblock content %}
