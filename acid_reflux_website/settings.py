@@ -1,23 +1,23 @@
-import environ
-import django_heroku
+#import environ
+#import django_heroku
 
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+'''
 env = environ.Env(
     DEBUG=(bool, False)
 )
-
+'''
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('KEY')
+SECRET_KEY = 'django-insecure-i6vol4g%q84evi8#e74(72ymruhfp5@#wvh%kchax=m$p%ar!y'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -124,7 +124,7 @@ else:
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

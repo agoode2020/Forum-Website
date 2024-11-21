@@ -10,3 +10,6 @@
 
 QUIZ
 -need to develop association rules learning algorithom for quiz in the future(for now just do weighted percentage)
+
+
+undo all changes made and try different platform
