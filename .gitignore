@@ -1,1 +1,40 @@
-secrets.env
+# Virtual Environment
+acid_reflux_website_venv/
+
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# VS Code
+.vscode/
+
+# Database & Migrations
+db.sqlite3
+*.db
+*.sqlite3
+*.sqlite
+
+# Static & Media Files
+/staticfiles.json
+media/
+/staticfiles/
+
+# Terraform
+main.tf
+database.tf
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfstate.lock.info
+
+# Docker
+Dockerfile
+
+# Miscellaneous
+data.json
+authors/
+ideasToImplement.txt
